@@ -1,5 +1,5 @@
 def stock_picker(array)
-    best_days = [0,0]
+    best_days = []
     profit = 0
 
     array.each_with_index do |buy_price, buy_day|
@@ -7,8 +7,7 @@ def stock_picker(array)
 
             if sell_day >= buy_day && (sell_price - buy_price) > profit
               profit = sell_price - buy_price
-              best_days[0] = buy_day
-              best_days[1] = sell_day
+              best_days = [buy_day, sell_day]
             end
         end
     end
